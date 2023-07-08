@@ -5,5 +5,13 @@ posta tiklandiginda detay sayfasina gidecek
 mesaj iconuna tiklandiginda mesaj sayfasina 
 
 
-//
+8 Temmuz
+
+kendi projenize firebase eklenecek
+email ve sifre ile giris aktif edilecek
+e vs s ile sign up ve sign in islemleri yapilacak
+displayname kullanicidan aldiginiz data yazilacak
+phone kullanicidan aldiginiz data yazilacak
+currentUser firebase metodu - uygulama yenilendiginde eger currentuser dolu ise mainview degilse sign in viewe gidecek
+
 
