@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextButton extends StatelessWidget {
@@ -9,9 +12,13 @@ class CustomTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
-      child: Text(buttonTitle),
-    );
+    if (Platform.isIOS) {
+      return CupertinoButton(onPressed: onPressed, child: Text(buttonTitle));
+    } else {
+      return TextButton(
+        onPressed: onPressed,
+        child: Text(buttonTitle),
+      );
+    }
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_app/modules/home/components/post_widget.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -10,6 +11,13 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return const PostWidget();
+        },
+      ),
+    );
   }
 }

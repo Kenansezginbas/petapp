@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pet_app/provider/nav_bar_provider.dart';
+import 'package:pet_app/provider/layouts/nav_bar_provider.dart';
+import 'package:pet_app/provider/page_view_provider.dart';
 import 'package:provider/provider.dart';
 
 class NavBarView extends StatelessWidget {
@@ -15,6 +16,7 @@ class NavBarView extends StatelessWidget {
       ],
       onTap: (value) {
         context.read<NavBarProvider>().changeCurrentIndex(value);
+        context.read<PageViewProvider>().changePage(value);
       },
     );
   }
