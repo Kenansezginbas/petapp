@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pet_app/config/router/routes_enum.dart';
 import 'package:pet_app/modules/auth/components/logo_view.dart';
+import 'package:pet_app/utils/enums/service_enums.dart';
 import 'package:pet_app/utils/ui/components/buttons/custom_elevated_button.dart';
 import 'package:pet_app/utils/ui/components/buttons/custom_text_button.dart';
 import 'package:pet_app/utils/ui/components/dialogs/custom_dialog.dart';
@@ -67,10 +68,12 @@ class _SignUpViewState extends State<SignUpView> {
     final authService = AuthService();
     final result = await authService.signUpUser(
         email: _usernameText.text, password: _passwordText.text);
-    if (result != null) {
+    if (result == ServiceEnum.success) {
       resetControllers();
-      AppNavigator.replaceWith(Routes.home);
-    } else {}
+      AppNavigator.replaceWith(Routes.main);
+    } else {
+      customDialog(context: context, title: "Hata", content: result.toString());
+    }
   }
 
   resetControllers() {

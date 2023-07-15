@@ -61,20 +61,24 @@ class _SignInViewState extends State<SignInView> {
   }
 
   signInUser() async {
-    final authService = AuthService();
-    final UserModel currentUser;
-    final result = await authService.signInUser(
-        email: _usernameText.text, password: _passwordText.text);
-    if (result != null) {
-      currentUser = UserModel(
-          id: result.user!.uid,
-          username: result.user!.email,
-          fullname: result.user!.email,
-          phone: "222-22-22");
+    try {
+      final authService = AuthService();
+      final UserModel currentUser;
+      final result = await authService.signInUser(
+          email: _usernameText.text, password: _passwordText.text);
+      if (result != null) {
+        currentUser = UserModel(
+            id: result.user!.uid,
+            username: result.user!.email,
+            fullname: result.user!.email,
+            phone: "222-22-22");
 
-      // ignore: use_build_context_synchronously
-      context.read<CurrentUserProvider>().changeUser(currentUser);
-      AppNavigator.replaceWith(Routes.main);
-    } else {}
+        // ignore: use_build_context_synchronously
+        context.read<CurrentUserProvider>().changeUser(currentUser);
+        AppNavigator.replaceWith(Routes.main);
+      } else {}
+    } catch (e) {
+      print(e.toString());
+    }
   }
 }

@@ -4,7 +4,9 @@ import 'package:pet_app/modules/auth/sign_in/sign_in_view.dart';
 import 'package:pet_app/modules/auth/sign_up/sign_up_view.dart';
 import 'package:pet_app/modules/home/home_view.dart';
 import 'package:pet_app/modules/main/main_view.dart';
+import 'package:pet_app/modules/post/new_post.dart';
 import 'package:pet_app/modules/splash/splash_view.dart';
+import 'package:pet_app/modules/users/users_view.dart';
 
 enum Routes {
   splash,
@@ -15,7 +17,9 @@ enum Routes {
   profile,
   paywall,
   paymentDetail,
-  paymentConfirmed
+  paymentConfirmed,
+  users,
+  newPost
 }
 
 class _Paths {
@@ -24,6 +28,8 @@ class _Paths {
   static const String signInPage = '/signIn';
   static const String signUpPage = '/signUp';
   static const String home = '/splash/home';
+  static const String users = '/users';
+  static const String newPost = '/newPost';
 
   static const Map<Routes, String> _pathMap = {
     Routes.splash: _Paths.splashPage,
@@ -31,6 +37,8 @@ class _Paths {
     Routes.signIn: _Paths.signInPage,
     Routes.signUp: _Paths.signUpPage,
     Routes.home: _Paths.home,
+    Routes.users: _Paths.users,
+    Routes.newPost: _Paths.newPost,
   };
 
   static String of(Routes route) => _pathMap[route] ?? splashPage;
@@ -49,6 +57,10 @@ class AppNavigator {
         return FadeRoute(page: const SignUpView());
       case _Paths.home:
         return FadeRoute(page: const HomeView());
+      case _Paths.users:
+        return FadeRoute(page: const UsersView());
+      case _Paths.newPost:
+        return FadeRoute(page: const NewPost());
       default:
         return FadeRoute(page: const SplashView());
     }

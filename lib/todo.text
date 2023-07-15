@@ -15,3 +15,6 @@ phone kullanicidan aldiginiz data yazilacak
 currentUser firebase metodu - uygulama yenilendiginde eger currentuser dolu ise mainview degilse sign in viewe gidecek
 
 
+//15 Temmuz
+postlari listelemek 
+email degistir bolumune kullanici maili getirilecek
