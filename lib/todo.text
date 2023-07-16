@@ -18,3 +18,7 @@ currentUser firebase metodu - uygulama yenilendiginde eger currentuser dolu ise 
 //15 Temmuz
 postlari listelemek 
 email degistir bolumune kullanici maili getirilecek
+
+//16 Temmuz
+get data metodlari dynamic yapilacak
+

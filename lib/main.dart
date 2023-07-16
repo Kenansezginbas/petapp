@@ -4,6 +4,7 @@ import 'package:pet_app/config/router/routes_enum.dart';
 import 'package:pet_app/config/themes/light_theme.dart';
 import 'package:pet_app/modules/auth/sign_in/sign_in_view.dart';
 import 'package:pet_app/modules/main/main_view.dart';
+import 'package:pet_app/modules/splash/splash_view.dart';
 import 'package:pet_app/provider/auth/current_user_provider.dart';
 import 'package:pet_app/provider/layouts/nav_bar_provider.dart';
 import 'package:pet_app/provider/page_view_provider.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
       theme: lightTheme,
       navigatorKey: AppNavigator.navigatorKey,
       onGenerateRoute: AppNavigator.onGenerateRoute,
-      home: const SignInView(),
+      home: const SplashView(),
     );
   }
 }

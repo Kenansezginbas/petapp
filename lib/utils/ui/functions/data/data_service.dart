@@ -48,7 +48,7 @@ class DataService {
           "id": post.id,
           "username": post.username,
           "petName": post.petName,
-          "desccription": post.desc
+          "description": post.desc
         },
       );
       return ServiceEnum.success;

@@ -10,7 +10,7 @@ class PostModel {
     id = json['id'];
     username = json['username'];
     petName = json['petName'];
-    petName = json['desc'];
+    desc = json['description'];
   }
 
   Map<String, dynamic> toJson() {
@@ -18,7 +18,7 @@ class PostModel {
     data['id'] = id;
     data['username'] = username;
     data['petName'] = petName;
-    data['desc'] = desc;
+    data['description'] = desc;
     return data;
   }
 }

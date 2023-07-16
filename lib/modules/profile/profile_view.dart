@@ -18,12 +18,12 @@ class _ProfileViewState extends State<ProfileView> {
         ProfileCard(
           iconData: Icons.email,
           title: "Email Degistir",
-          route: Routes.paymentConfirmed,
+          route: Routes.updateEmail,
         ),
         ProfileCard(
           iconData: Icons.person,
           title: "Sifre Degistir",
-          route: Routes.paymentConfirmed,
+          route: Routes.updatePassword,
         ),
         ProfileCard(
           iconData: Icons.credit_card,

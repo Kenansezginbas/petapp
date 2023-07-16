@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pet_app/config/router/fade_page_route.dart';
+import 'package:pet_app/modules/auth/change_mail/update_email_view.dart';
+import 'package:pet_app/modules/auth/change_password/update_password_view.dart';
 import 'package:pet_app/modules/auth/sign_in/sign_in_view.dart';
 import 'package:pet_app/modules/auth/sign_up/sign_up_view.dart';
 import 'package:pet_app/modules/home/home_view.dart';
@@ -19,7 +21,9 @@ enum Routes {
   paymentDetail,
   paymentConfirmed,
   users,
-  newPost
+  newPost,
+  updatePassword,
+  updateEmail
 }
 
 class _Paths {
@@ -30,6 +34,8 @@ class _Paths {
   static const String home = '/splash/home';
   static const String users = '/users';
   static const String newPost = '/newPost';
+  static const String updatePassword = '/updatePassword';
+  static const String updateEmail = '/updateEmail';
 
   static const Map<Routes, String> _pathMap = {
     Routes.splash: _Paths.splashPage,
@@ -39,6 +45,7 @@ class _Paths {
     Routes.home: _Paths.home,
     Routes.users: _Paths.users,
     Routes.newPost: _Paths.newPost,
+    Routes.updateEmail: _Paths.updateEmail,
   };
 
   static String of(Routes route) => _pathMap[route] ?? splashPage;
@@ -61,6 +68,10 @@ class AppNavigator {
         return FadeRoute(page: const UsersView());
       case _Paths.newPost:
         return FadeRoute(page: const NewPost());
+      case _Paths.updatePassword:
+        return FadeRoute(page: const UpdatePasswordView());
+      case _Paths.updateEmail:
+        return FadeRoute(page: const UpdateMailView());
       default:
         return FadeRoute(page: const SplashView());
     }
